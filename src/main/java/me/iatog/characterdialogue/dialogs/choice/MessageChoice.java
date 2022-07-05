@@ -7,18 +7,18 @@ import me.iatog.characterdialogue.session.DialogSession;
 
 public class MessageChoice extends DialogChoice {
 
-	public MessageChoice() {
-		super("message", true);
-	}
+    public MessageChoice() {
+        super("message", true);
+    }
 
-	@Override
-	public void onSelect(String argument, DialogSession dialogSession, ChoiceSession choiceSession) {
-		dialogSession.getPlayer().sendMessage(Placeholders.translate(dialogSession.getPlayer(), argument)
-				.replace("%npc_name%", dialogSession.getDisplayName()));
-		
-		if(dialogSession.hasNext()) {
-			dialogSession.start(dialogSession.getCurrentIndex() + 1);
-		}
-	}
+    @Override
+    public void onSelect(String argument, DialogSession dialogSession, ChoiceSession choiceSession) {
+        dialogSession.getPlayer().sendMessage(Placeholders.translate(dialogSession.getPlayer(), argument)
+                .replace("%npc_name%", dialogSession.getDisplayName()));
+
+        if (dialogSession.hasNext()) {
+            dialogSession.start(dialogSession.getCurrentIndex() + 1);
+        }
+    }
 
 }

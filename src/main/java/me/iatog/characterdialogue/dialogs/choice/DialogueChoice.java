@@ -7,17 +7,17 @@ import me.iatog.characterdialogue.session.DialogSession;
 
 public class DialogueChoice extends DialogChoice {
 
-	public DialogueChoice() {
-		super("dialogue", true);
-	}
+    public DialogueChoice() {
+        super("dialogue", true);
+    }
 
-	@Override
-	public void onSelect(String argument, DialogSession dialogSession, ChoiceSession choiceSession) {
-		CharacterDialogueAPI.get().runDialogueExpression(dialogSession.getPlayer(), argument);
-		
-		if(dialogSession.hasNext()) {
-			dialogSession.start(dialogSession.getCurrentIndex() + 1);
-		}
-	}
+    @Override
+    public void onSelect(String argument, DialogSession dialogSession, ChoiceSession choiceSession) {
+        CharacterDialogueAPI.get().runDialogueExpression(dialogSession.getPlayer(), argument);
+
+        if (dialogSession.hasNext()) {
+            dialogSession.start(dialogSession.getCurrentIndex() + 1);
+        }
+    }
 
 }

@@ -14,7 +14,6 @@ public class EmptyDialogSession extends DialogSession {
 
     @Override
     public void start(int index) {
-        // TODO: nothing
-    }
 
+    }
 }
